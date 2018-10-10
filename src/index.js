@@ -50,7 +50,7 @@ export default class ReactPageScroller extends React.Component {
             event.preventDefault();
         };
 
-        this._pageContainer.addEventListener("wheel", this[wheelScroll]);
+        this._pageContainer.addEventListener("wheel", _.debounce(this[wheelScroll], 20));
         this._pageContainer.addEventListener("touchmove", this[touchMove]);
         this._pageContainer.addEventListener("keydown", this[keyPress]);
 
